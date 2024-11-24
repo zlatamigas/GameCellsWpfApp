@@ -1,0 +1,85 @@
+﻿<Window x:Class="QueenGame.WPF.Views.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QueenGame.WPF.Views"
+        xmlns:views="clr-namespace:QueenGame.WPF.Views"
+        xmlns:vms="clr-namespace:QueenGame.WPF.ViewModels"
+        mc:Ignorable="d"
+        Title="{DynamicResource Window_title}" 
+        Height="600" Width="700"
+        MinHeight="600" MinWidth="700" 
+        WindowStartupLocation="CenterScreen" Icon="{StaticResource CellSelectedSvgDrawingImage}">
+   
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <RectAnimation 
+                        Storyboard.TargetName="WindowMainGrid"
+                        Storyboard.TargetProperty="(Grid.Background).(ImageBrush.Viewport)"
+                        To="128,-64,64,64"
+                        RepeatBehavior="Forever"
+                        Duration="0:0:20">
+                        
+                    </RectAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid Background="{StaticResource WindowBackgroundBrush}">           
+        <Grid x:Name="WindowMainGrid">
+            <Grid.Background>
+                <ImageBrush ImageSource="{StaticResource CellSelectedSvgDrawingImage}" 
+                            TileMode="Tile"
+                            ViewportUnits="Absolute" 
+                            Viewport="0,0,64,64" 
+                            Viewbox="0,0,1.2,1.2" 
+                            Stretch="Uniform" />
+            </Grid.Background>
+        </Grid>        
+        <Grid>
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource Light20TransparentColor}"/>
+            </Grid.Background>
+        </Grid>
+
+        <Border HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"
+                Margin="32"
+                Padding="32"
+                CornerRadius="50"
+                BorderThickness="10"
+                BorderBrush="{StaticResource MenuBorderBrush}">
+            
+            <Border.Background>
+                <SolidColorBrush Color="White"/>
+            </Border.Background>
+            
+            <Grid>            
+                <Grid.Resources>
+                    <DataTemplate DataType="{x:Type vms:MainPageViewModel}">
+                        <views:MainPageView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vms:LevelsListingViewModel}">
+                        <views:LevelsListingView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vms:GenerateLevelOptionsViewModel}">
+                        <views:GenerateLevelOptionsView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vms:LevelViewModel}">
+                        <views:LevelView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vms:SettingsViewModel}">
+                        <views:SettingsView/>
+                    </DataTemplate>
+                </Grid.Resources>
+
+                <ContentControl Content="{Binding CurrentViewModel}"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

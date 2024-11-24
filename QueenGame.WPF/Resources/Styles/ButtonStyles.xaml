@@ -1,0 +1,191 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="BigButtonStyle" TargetType="{x:Type Button}">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="Background" Value="{StaticResource ButtonBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Height="{TemplateBinding Height}"
+                                    CornerRadius="10"
+                                    Padding="{TemplateBinding Padding}">
+                                    
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>            
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource ButtonBackgroundMouseOverBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ButtonBorderMouseOverBrush}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource ButtonAccentBackgroundNotEnabledBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ButtonAccentBorderNotEnabledBrush}"/>               
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="RoundButtonStyle" TargetType="{x:Type Button}">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="Width" Value="48"/>
+            <Setter Property="Background" Value="{StaticResource ButtonBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonBorderBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource ButtonForegroundBrush}"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Height="{TemplateBinding Height}"
+                                    Width="{TemplateBinding Width}"
+                                    CornerRadius="100" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center"
+                                    Padding="{TemplateBinding Padding}">
+                                    
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>            
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource ButtonBackgroundMouseOverBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ButtonBorderMouseOverBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource ButtonForegroundMouseOverBrush}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource ButtonBackgroundNotEnabledBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ButtonBorderNotEnabledBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource ButtonForegroundNotEnabledBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="Background" Value="{StaticResource ButtonBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonBorderBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource ButtonForegroundBrush}"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Height="{TemplateBinding Height}"
+                                    Width="{TemplateBinding Width}"
+                                    CornerRadius="20" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
+                                    VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                    Padding="{TemplateBinding Padding}">
+                                    
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>            
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource ButtonBackgroundMouseOverBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ButtonBorderMouseOverBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource ButtonForegroundMouseOverBrush}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource ButtonBackgroundNotEnabledBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ButtonBorderNotEnabledBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource ButtonForegroundNotEnabledBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CellStyle" TargetType="{x:Type Button}">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                        Background="{TemplateBinding Background}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="LanguageButtonStyle" TargetType="{x:Type Button}">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryDarkBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="12 2"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Height="{TemplateBinding Height}"
+                                    Width="{TemplateBinding Width}"
+                                    CornerRadius="8"
+                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
+                                    VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                    Padding="{TemplateBinding Padding}"
+                                    Margin="{TemplateBinding Margin}">
+
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource PrimaryDarkShadeBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+</ResourceDictionary>

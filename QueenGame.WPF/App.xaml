@@ -1,0 +1,26 @@
+﻿<Application x:Class="QueenGame.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:QueenGame.WPF">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Size resources-->
+                <ResourceDictionary Source="Resources/Sizes/SizeResources.xaml"/>
+                <!--Drawable resources-->
+                <ResourceDictionary Source="Resources/Images/SvgResources.xaml"/>
+                <!--Langs (default), other are dynamically loaded during work-->
+                <ResourceDictionary Source="Resources/Langs/lang.xaml"/>
+                <!--Colors-->
+                <ResourceDictionary Source="Resources/Colors/ColorResources.xaml"/>
+                <!--Styles-->
+                <ResourceDictionary Source="Resources/Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/TextBlockStyles.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/TextBoxStyles.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/BorderStyles.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/LoadingStyles.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/ScrollViewerStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

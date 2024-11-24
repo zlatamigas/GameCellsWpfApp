@@ -1,0 +1,113 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <!--MainWindowView-->
+
+    <v:String x:Key="Window_title">Queen</v:String>
+
+    <!--MainPageView-->
+
+    <v:String x:Key="MainPageView_header">Queen</v:String>
+    <v:String x:Key="MainPageView_btn_toLevelsListing">Game Levels</v:String>
+    <v:String x:Key="MainPageView_btn_toGenerateLevelOptions">Random Game</v:String>
+    <v:String x:Key="MainPageView_btn_toSettings">Settings</v:String>
+
+    <!--SettingsView-->
+
+    <v:String x:Key="SettingsView_header">Settings</v:String>
+    <v:String x:Key="SettingsView_tb_lang">Language</v:String>
+
+    <!--LevelsListingView-->
+
+    <v:String x:Key="LevelsListingView_header">List of Game</v:String>
+    <v:String x:Key="LevelsListingView_levelsList_gameId">Game ID</v:String>
+    <v:String x:Key="LevelsListingView_levelsList_size">Size</v:String>
+    <v:String x:Key="LevelsListingView_levelsList_duration">Best Time</v:String>
+
+    <!--GenerateLevelOptionsView-->
+
+    <v:String x:Key="GenerateLevelOptionsView_header">Generate Game</v:String>
+    <v:String x:Key="GenerateLevelOptionsView_tb_size">Size</v:String>
+    <v:String x:Key="GenerateLevelOptionsView_btn_startGame">Start Game</v:String>
+    <v:String x:Key="GenerateLevelOptionsView_tb_bestresults">Best Results</v:String>
+    <v:String x:Key="GenerateLevelOptionsView_resultsList_size">Size</v:String>
+    <v:String x:Key="GenerateLevelOptionsView_resultsList_duration">Best Time</v:String>
+    <v:String x:Key="GenerateLevelOptionsView_tb_noresults">Empty</v:String>
+
+    <!--LevelView-->
+
+    <v:String x:Key="LevelView_btn_clearSelection">Clear selection</v:String>
+    <v:String x:Key="LevelView_tb_game">Game</v:String>
+
+    <v:String x:Key="LevelView_PausedMenu_tb_pause">Pause</v:String>
+    <v:String x:Key="LevelView_PausedMenu_btn_resume">Resume</v:String>
+    <v:String x:Key="LevelView_PausedMenu_btn_menu">Menu</v:String>
+
+    <v:String x:Key="LevelView_ConfirmReturnMenu_tb_header">Return?</v:String>
+    <v:String x:Key="LevelView_ConfirmReturnMenu_tb_text">Your progress won't be saved!</v:String>
+    <v:String x:Key="LevelView_ConfirmReturnMenu_btn_yes">Yes</v:String>
+    <v:String x:Key="LevelView_ConfirmReturnMenu_btn_no">No</v:String>
+
+    <v:String x:Key="LevelView_CompletedMenu_tb_header">Level completed!</v:String>
+    <v:String x:Key="LevelView_CompletedMenu_tb_newRecord">New record!</v:String>
+    <v:String x:Key="LevelView_CompletedMenu_tb_yourDuration">Your time:</v:String>
+    <v:String x:Key="LevelView_CompletedMenu_tb_bestDuration">Best time:</v:String>
+    <v:String x:Key="LevelView_CompletedMenu_btn_playAgain">Play Again</v:String>
+    <v:String x:Key="LevelView_CompletedMenu_btn_backToMenu">Menu</v:String>
+    <v:String x:Key="LevelView_CompletedMenu_btn_nextGame">Next</v:String>
+
+    <!--LocalisableControls-->
+
+    <Style x:Key="LocalisableInstructionGridStyle" TargetType="{x:Type ContentControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="{StaticResource InstructionTextSize}" TextWrapping="Wrap" Text="How to play" FontWeight="Bold"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" FontSize="{StaticResource InstructionTextSize}" FontWeight="Bold" Text="1. "/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" FontSize="{StaticResource InstructionTextSize}" FontWeight="Bold" Text="2. "/>
+                        <TextBlock Grid.Column="0" Grid.Row="3" FontSize="{StaticResource InstructionTextSize}" FontWeight="Bold" Text="3. "/>
+
+                        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="{StaticResource InstructionTextSize}" TextWrapping="Wrap">
+                            Your goal is to have exactly one 
+                            <Image Width="{StaticResource InstructionTextSize}" Height="{StaticResource InstructionTextSize}" Source="{StaticResource CellSelectedSvgDrawingImage}" VerticalAlignment="Bottom"/> 
+                            each row, column, and color region.
+                        </TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="2" FontSize="{StaticResource InstructionTextSize}" TextWrapping="Wrap">
+                            Tap once to place 
+                            <Image Width="{StaticResource InstructionTextSize}" Height="{StaticResource InstructionTextSize}" Source="{StaticResource CellMarkedSvgDrawingImage}" VerticalAlignment="Bottom" Margin="{StaticResource InstructionImgCellMarkedMarginSize}"/> 
+                            and tap twice for 
+                            <Image Width="{StaticResource InstructionTextSize}" Height="{StaticResource InstructionTextSize}" Source="{StaticResource CellSelectedSvgDrawingImage}" VerticalAlignment="Bottom"/>. 
+                            Use 
+                            <Image Width="{StaticResource InstructionTextSize}" Height="{StaticResource InstructionTextSize}" Source="{StaticResource CellMarkedSvgDrawingImage}" VerticalAlignment="Bottom" Margin="{StaticResource InstructionImgCellMarkedMarginSize}"/> 
+                            to mark where 
+                            <Image Width="{StaticResource InstructionTextSize}" Height="{StaticResource InstructionTextSize}" Source="{StaticResource CellSelectedSvgDrawingImage}" VerticalAlignment="Bottom"/> 
+                            cannot be placed.
+                        </TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="3" FontSize="{StaticResource InstructionTextSize}" TextWrapping="Wrap">
+                            Two 
+                            <Image Width="{StaticResource InstructionTextSize}" Height="{StaticResource InstructionTextSize}" Source="{StaticResource CellSelectedSvgDrawingImage}" VerticalAlignment="Bottom"/> 
+                            cannot touch each other, not even diagonally.
+                        </TextBlock>
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

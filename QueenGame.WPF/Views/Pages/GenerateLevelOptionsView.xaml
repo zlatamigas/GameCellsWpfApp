@@ -1,0 +1,177 @@
+﻿<UserControl x:Class="QueenGame.WPF.Views.GenerateLevelOptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QueenGame.WPF.Views"
+             xmlns:converters="clr-namespace:QueenGame.WPF.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+
+    <UserControl.Resources>
+        <converters:TimeConverter x:Key="TimeConverter"/>
+        <converters:ReverseBooleanToVisibilityConverter x:Key="ReverseBooleanToVisibilityConverter"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+    </UserControl.Resources>
+
+    <DockPanel Background="White">
+        
+        <StackPanel DockPanel.Dock="Top">
+
+            <Button 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Command="{Binding ToMainPageViewModelCommand}"
+                    Style="{StaticResource RoundButtonStyle}">
+                <Image>
+                    <Image.Source>
+                        <DrawingImage>
+                            <DrawingImage.Drawing>
+                                <GeometryDrawing Brush="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}">
+                                    <GeometryDrawing.Geometry>
+                                        <StaticResource ResourceKey="ReturnSvgGeometryGroup"/>
+                                    </GeometryDrawing.Geometry>
+                                </GeometryDrawing>
+                            </DrawingImage.Drawing>
+                        </DrawingImage>
+                    </Image.Source>
+                </Image>
+            </Button>
+
+            <TextBlock 
+                    Text="{DynamicResource GenerateLevelOptionsView_header}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource HeaderTextBlockStyle}"/>
+
+
+
+            <Border Margin="20 0"
+                    BorderBrush="{StaticResource MenuBorderBrush}"
+                    BorderThickness="3"
+                    CornerRadius="10"
+                    Padding="8">
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock  Grid.Row="0" Grid.Column="0" 
+                                FontSize="14" 
+                                FontWeight="Medium" 
+                                HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Center" 
+                                TextAlignment="Center" 
+                                Text="{DynamicResource GenerateLevelOptionsView_tb_size}"/>
+                    <TextBox    Grid.Row="0" Grid.Column="1" 
+                                FontSize="14" 
+                                FontWeight="Medium" 
+                                HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Center"  
+                                TextAlignment="Center"
+                                Text="{Binding Size, UpdateSourceTrigger=PropertyChanged}"
+                                Style="{StaticResource TextBoxStyle}"/>
+                </Grid>
+            </Border>
+            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                        Content="{DynamicResource GenerateLevelOptionsView_btn_startGame}"
+                        Command="{Binding GenerateGameLevelCommand}"
+                        Style="{StaticResource BigButtonStyle}"
+                        Margin="20 12"/>
+
+
+            <TextBlock 
+            Margin="0 32 0 14"
+            HorizontalAlignment="Center"
+            Style="{StaticResource HeaderTextBlockStyle}"
+            Text="{StaticResource GenerateLevelOptionsView_tb_bestresults}"
+            FontSize="20"/>
+
+        </StackPanel>
+    
+        <Grid DockPanel.Dock="Bottom" 
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+
+            
+            <Grid Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}">
+                
+                <Grid x:Name="LoadingGrid" 
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+
+                    <ContentControl Style="{StaticResource LoadingCubeStyle}"/>
+                </Grid>
+                
+            </Grid>
+            
+
+            <Grid Visibility="{Binding IsLoading, Converter={StaticResource ReverseBooleanToVisibilityConverter}}">
+                            
+                <DockPanel Margin="20 0"
+                    HorizontalAlignment="Stretch"
+                    Visibility="{Binding HasResults, Converter={StaticResource BooleanToVisibilityConverter}}">
+                
+                    <Border DockPanel.Dock="Top"
+                        VerticalAlignment="Center"
+                        Padding="8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" FontSize="14" FontWeight="Medium" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{DynamicResource GenerateLevelOptionsView_resultsList_size}"/>
+                            <TextBlock Grid.Column="1" FontSize="14" FontWeight="Medium" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{DynamicResource GenerateLevelOptionsView_resultsList_duration}"/>
+                        </Grid>
+                    </Border>
+
+                    <ScrollViewer DockPanel.Dock="Bottom"
+                              VerticalScrollBarVisibility="Auto">
+
+                        <ItemsControl ItemsSource="{Binding GeneratedGameResults}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Style="{StaticResource ListItemBorderStyle}">
+
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Text="{Binding Size}"/>
+                                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Text="{Binding Duration, Converter={StaticResource TimeConverter}}"/>
+
+                                        </Grid>
+
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+
+                    </ScrollViewer>
+
+                </DockPanel>
+
+                <Grid Visibility="{Binding HasResults, Converter={StaticResource ReverseBooleanToVisibilityConverter}}"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                    <TextBlock Text="{StaticResource GenerateLevelOptionsView_tb_noresults}"
+                               Style="{StaticResource FadedTextBlockStyle}"
+                               TextAlignment="Center"/>
+                </Grid>
+            
+            </Grid>
+        
+        </Grid>
+    </DockPanel>
+    
+    
+</UserControl>
