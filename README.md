@@ -2,7 +2,7 @@
 
 ## Description
 
-Queen is a Desktop App inspired by LinkedIn Queen.
+Queen is a Desktop App inspired by [LinkedIn's Queens](https://www.linkedin.com/games/queens/).
 
 The purpose of the game is to fill cells so that the game field is covered according to the rules. There are 2 game modes:
 
