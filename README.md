@@ -21,7 +21,7 @@ Currently supported languages: English and Russian.
 The App starts at the main menu with last saved language settings where the user can change some settings or choose one of the game modes.
 
 <p align="center">
-  <kbd> <img src="https://github.com/user-attachments/assets/3b02dc70-f98b-4e3f-9729-8572413f6569" alt="Main Menu" width="480" style="border-radius:10px"\></kbd>
+  <kbd> <img src="https://github.com/user-attachments/assets/3b02dc70-f98b-4e3f-9729-8572413f6569" alt="Main Menu" width="300" style="border-radius:10px"\></kbd>
 </p>
 
 To generate a new game the user needs to put down the desirable size of the game from 4 to 24 inclusive. The input is validated.
@@ -29,8 +29,8 @@ To generate a new game the user needs to put down the desirable size of the game
 A prebuilt level is stored in database and can be completed only once. So be attentive!
 
 <p align="center">
-  <kbd> <img alt="Prebuilt Game from Databased" src="https://github.com/user-attachments/assets/52ca7d99-c12f-45e9-9d94-b280ddc9a230" width="480" style="border-radius:10px"\></kbd> 
-  <kbd> <img alt="Generated Game" src="https://github.com/user-attachments/assets/ded74409-afcb-414b-8b81-31ecfa1e1c91" width="480" style="border-radius:10px"\></kbd> 
+  <kbd> <img alt="Prebuilt Game from Databased" src="https://github.com/user-attachments/assets/52ca7d99-c12f-45e9-9d94-b280ddc9a230" width="300" style="border-radius:10px"\></kbd> 
+  <kbd> <img alt="Generated Game" src="https://github.com/user-attachments/assets/ded74409-afcb-414b-8b81-31ecfa1e1c91" width="300" style="border-radius:10px"\></kbd> 
 </p>
 <p align="center">Prebuilt Game from Databased (1) and Generated Game (2)</p>
 <br>
@@ -40,8 +40,8 @@ To complete the game the user must fill the game field according to the rules (c
 If the new record is set, a special notification will be shown.
 
 <p align="center">
-  <kbd> <img src="https://github.com/user-attachments/assets/31fcec98-29b4-4c20-9fec-89a213a63deb" alt="Completed level" width="480" style="border-radius:10px"\></kbd> 
-  <kbd> <img src="https://github.com/user-attachments/assets/cfbd6285-c352-42e4-8331-0c0d49d8f0ad" alt="New Score" width="480" style="border-radius:10px"\></kbd>
+  <kbd> <img src="https://github.com/user-attachments/assets/31fcec98-29b4-4c20-9fec-89a213a63deb" alt="Completed level" width="300" style="border-radius:10px"\></kbd> 
+  <kbd> <img src="https://github.com/user-attachments/assets/cfbd6285-c352-42e4-8331-0c0d49d8f0ad" alt="New Score" width="300" style="border-radius:10px"\></kbd>
 </p>
 
 
