@@ -11,6 +11,7 @@
         <converters:TimeConverter x:Key="TimeConverter"/>
         <converters:ReverseBooleanToVisibilityConverter x:Key="ReverseBooleanToVisibilityConverter"/>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <converters:IsNullConverter x:Key="IsNullConverter"/>
 
     </UserControl.Resources>
 
@@ -105,9 +106,18 @@
                                     <Button    VerticalAlignment="Center" HorizontalAlignment="Center" 
                                                Grid.Column="3" Command="{Binding GameStartCommand}"
                                                Width="30" Height="30"
-                                               Style="{StaticResource RoundButtonStyle}"
                                                BorderThickness="3"
                                                Padding="6">
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource RoundButtonStyle}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding FinishedGameDuration, Converter={StaticResource IsNullConverter}}" Value="False">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                    </DataTrigger> 
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                        
                                         <Image>
                                             <Image.Source>
                                                 <DrawingImage>

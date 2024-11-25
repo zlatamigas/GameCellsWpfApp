@@ -31,28 +31,57 @@ namespace QueenGame.WPF.Stores
             return GameInfos;
         }
 
-        public LevelOption GetNextLevelOption(int currentGameId) 
+        public void UpdateLevelOptionDuration(int currentGameId, int? duration)
+        {
+            GameInfo? currentGame = GameInfos.FirstOrDefault(v => v.GameId == currentGameId);
+            if (currentGame != null)
+            {
+                currentGame.FinishedGameDuration = duration;
+            }
+        }
+
+        public bool HasNextLevelOption(int currentGameId)
+        {
+            return GetNextLevelOption(currentGameId) != null;
+        }
+
+        public LevelOption? GetNextLevelOption(int currentGameId) 
         {
             GameInfo? nextGameInfo = null;
             GameInfo? currentGame = GameInfos.FirstOrDefault(v => v.GameId == currentGameId);
             if (currentGame != null) 
             {
                 int currentGameIndex = GameInfos.IndexOf(currentGame);
+                int index = currentGameIndex + 1;
 
-                if (currentGameIndex == GameInfos.Count - 1)
+                while (index != currentGameIndex && nextGameInfo == null)
                 {
-                    nextGameInfo = GameInfos.ElementAt(0);
-                }
-                else 
-                { 
-                    nextGameInfo = GameInfos.ElementAt(currentGameIndex+1);
+                    if (index == GameInfos.Count) 
+                    {
+                        index = 0;
+                        if (index == currentGameIndex) 
+                        { 
+                            break;
+                        }
+                    }
+
+                    if (GameInfos.ElementAt(index).FinishedGameDuration == null)
+                    {
+                        nextGameInfo = GameInfos.ElementAt(index);
+                    }
+                    else 
+                    { 
+                        index++;
+                    }
                 }
             }
 
-            return new LevelOption {
-                GameId = nextGameInfo?.GameId,
-                Size = null,
-            };
+            return nextGameInfo != null 
+                ? new LevelOption {
+                        GameId = nextGameInfo.GameId,
+                        Size = null,
+                    }
+                : null;
         }   
     }
 }
