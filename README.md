@@ -21,7 +21,7 @@ Currently supported languages: English and Russian.
 The App starts at the main menu with last saved language settings where the user can change some settings or choose one of the game modes.
 
 <p align="center">
-  <kbd> <img src="https://github.com/user-attachments/assets/3b02dc70-f98b-4e3f-9729-8572413f6569" alt="Main Menu" width="340" style="border-radius:10px"\></kbd>
+  <kbd> <img src="https://github.com/user-attachments/assets/3b02dc70-f98b-4e3f-9729-8572413f6569" alt="Main Menu" width="400" style="border-radius:10px"\></kbd>
 </p>
 
 To generate a new game the user needs to put down the desirable size of the game from 4 to 24 inclusive. The input is validated.
