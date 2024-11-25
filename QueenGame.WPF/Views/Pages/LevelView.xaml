@@ -19,9 +19,11 @@
         
     </UserControl.Resources>
 
-    <ScrollViewer>
-        
     <Grid>
+        
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        
+        <Grid>
         
         <StackPanel Orientation="Vertical">
 
@@ -296,11 +298,19 @@
         </StackPanel>
 
 
+
+
+
+    </Grid>
+    
+    </ScrollViewer>
+        
+
         <Grid x:Name="CompletedMenuGrid" 
                   Visibility="{Binding IsCompleted, Converter={StaticResource BooleanToVisibilityConverter}}">
             
                 <Grid Width="500"
-                      Height="500"
+                      Height="420"
                       Margin="0 0 0 0">
                       <!--Margin="0 1000 0 0">-->
                     <Grid.Style>
@@ -483,29 +493,24 @@
 
                             <Button Style="{StaticResource RoundedButtonStyle}" 
                                     Margin = "0 2" Width="300" Height="50" 
-                                    Content="{DynamicResource LevelView_CompletedMenu_btn_playAgain}" 
-                                    Command="{Binding RestrartCommand}"/>
+                                    Content="{DynamicResource LevelView_CompletedMenu_btn_nextGame}" 
+                                    Command="{Binding NextLevelCommand}"/>
                             <Button Style="{StaticResource RoundedButtonStyle}" 
                                     Margin = "0 2" Width="300" Height="50" 
                                     Content="{DynamicResource LevelView_CompletedMenu_btn_backToMenu}" 
                                     Command="{Binding ReturnConfirmCommand}"/>
-                            <Button Style="{StaticResource RoundedButtonStyle}" 
-                                    Margin = "0 2" Width="300" Height="50" 
-                                    Content="{DynamicResource LevelView_CompletedMenu_btn_nextGame}" 
-                                    Command="{Binding NextLevelCommand}"/>
                         </StackPanel>
 
                     </Border>
 
                 </Grid>
             </Grid>
-
-
-
-
+        
+        
     </Grid>
     
-    </ScrollViewer>
+    
+    
 
 
 

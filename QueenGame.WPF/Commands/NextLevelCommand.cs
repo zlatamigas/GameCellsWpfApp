@@ -32,7 +32,15 @@ namespace QueenGame.WPF.Commands
         {
             if (viewModel.GameId != null)
             {
-                levelStore.CurrentLevelOption = levelsInfoStore.GetNextLevelOption(viewModel.GameId.Value);
+                LevelOption? levelOption = levelsInfoStore.GetNextLevelOption(viewModel.GameId.Value);
+                if (levelOption != null)
+                {
+                    levelStore.CurrentLevelOption = levelOption;
+                }
+                else
+                {
+                    return;
+                }
             }
             else if (viewModel.Size != null)
             {
@@ -48,6 +56,13 @@ namespace QueenGame.WPF.Commands
             }
 
             navigationService.Navigate();
+        }
+
+        public override bool CanExecute(object? parameter)
+        {
+            return base.CanExecute(parameter)
+                && (    (viewModel.GameId != null && levelsInfoStore.HasNextLevelOption(viewModel.GameId.Value)) 
+                     || (viewModel.GameId == null && viewModel.Size != null));
         }
     }
 }

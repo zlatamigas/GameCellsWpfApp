@@ -26,8 +26,7 @@ namespace QueenGame.WPF.ViewModels
 
         public ICommand NextLevelCommand { get; }
         public ICommand ReturnAfterFinishCommand { get; }
-        public ICommand RestrartCommand { get; }
-
+       
 
         private LevelStore levelStore;
         private readonly LevelsInfoStore levelsInfoStore;
@@ -77,6 +76,8 @@ namespace QueenGame.WPF.ViewModels
             }
         }
 
+        public bool IsGeneratedLevel => GameId == null;
+
         public override void Dispose()
         {
             levelStore.CurrentLevelStateChanged -= OnCurrentLevelStateChanged;
@@ -113,8 +114,7 @@ namespace QueenGame.WPF.ViewModels
             {
                 ReturnConfirmCommand = new BackFromLevelConfirmCommand<GenerateLevelOptionsViewModel>(this, levelStore, navigationServiceGenerateLevelOptionsViewModel);
             }
-            RestrartCommand = new RestartCommand(this, levelStore);
-
+            
             PauseCommand = new PauseCommand(this, levelStore);
             ResumeCommand = new ResumeCommand(this, levelStore);
             ClearSelectionCommand = new ClearSelectionCommand(this, levelStore);
@@ -185,6 +185,10 @@ namespace QueenGame.WPF.ViewModels
                         if (GameBestDuration == null || GameBestDuration > Duration)
                         {
                             levelStore.GameBestDuration = Duration;
+                            if (GameId != null)
+                            {
+                                levelsInfoStore.UpdateLevelOptionDuration(GameId.Value, Duration);
+                            }
                         }
                         
                         OnPropertyChanged(nameof(IsCompleted));

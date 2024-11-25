@@ -8,8 +8,8 @@
         xmlns:vms="clr-namespace:QueenGame.WPF.ViewModels"
         mc:Ignorable="d"
         Title="{DynamicResource Window_title}" 
-        Height="600" Width="700"
-        MinHeight="600" MinWidth="700" 
+        Height="900" Width="700"
+        MinHeight="620" MinWidth="700" 
         WindowStartupLocation="CenterScreen" Icon="{StaticResource CellSelectedSvgDrawingImage}">
    
     <Window.Triggers>
