@@ -24,7 +24,7 @@ The App starts at the main menu with last saved language settings where the user
   <kbd> <img src="https://github.com/user-attachments/assets/3b02dc70-f98b-4e3f-9729-8572413f6569" alt="Main Menu" width="480" style="border-radius:10px"\></kbd>
 </p>
 
-To generate a new game the user need to put down the desirable size of the game from 4 to 24 inclusive. The input is validated.
+To generate a new game the user needs to put down the desirable size of the game from 4 to 24 inclusive. The input is validated.
 
 A prebuilt level is stored in database and can be completed only once. So be attentive!
 
