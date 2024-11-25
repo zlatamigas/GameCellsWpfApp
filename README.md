@@ -1,8 +1,4 @@
-# Queen
-
-<p align="center">
-  <img alt="Queen" src="https://github.com/user-attachments/assets/a2618840-f2e2-40b2-a745-42c31549c423" width="300"\>
-</p>
+# <img src="https://github.com/user-attachments/assets/a2618840-f2e2-40b2-a745-42c31549c423" width="30" alt="icon"/> Queen
 
 ## Description
 
