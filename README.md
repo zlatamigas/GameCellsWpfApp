@@ -45,7 +45,7 @@ If the new record is set, a special notification will be shown.
 </p>
 
 
-To change some setting and check the rules the user should visit settings. The selected settings will be applied immediately and will be saved for the next App launch.
+To change some setting and check the rules the user should visit settings. Selected settings will be applied immediately and will be saved for the next App launch.
 
 <p align="center">
   <kbd> <img alt="Settings ENG" src="https://github.com/user-attachments/assets/b1adfa27-a884-48b7-8ef2-5aebf79db42f" width="340" style="border-radius:10px"\></kbd> 
