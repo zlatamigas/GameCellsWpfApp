@@ -29,8 +29,8 @@ To generate a new game the user needs to put down the desirable size of the game
 A prebuilt level is stored in database and can be completed only once. So be attentive!
 
 <p align="center">
-  <kbd> <img alt="Prebuilt Game from Databased" src="https://github.com/user-attachments/assets/52ca7d99-c12f-45e9-9d94-b280ddc9a230" width="340" style="border-radius:10px"\></kbd> 
-  <kbd> <img alt="Generated Game" src="https://github.com/user-attachments/assets/ded74409-afcb-414b-8b81-31ecfa1e1c91" width="340" style="border-radius:10px"\></kbd> 
+  <kbd> <img alt="Prebuilt Game from Databased" src="https://github.com/user-attachments/assets/ded74409-afcb-414b-8b81-31ecfa1e1c91" width="340" style="border-radius:10px"\></kbd> 
+  <kbd> <img alt="Generated Game" src="https://github.com/user-attachments/assets/52ca7d99-c12f-45e9-9d94-b280ddc9a230" width="340" style="border-radius:10px"\></kbd> 
 </p>
 <p align="center">Prebuilt Game from Databased (1) and Generated Game (2)</p>
 <br>
